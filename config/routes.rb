@@ -1,8 +1,12 @@
 Rails.application.routes.draw do
-  resources :users, only: [:index, :update, :show]
-  resources :matches
-  root to: "users#index"
+  root to: 'pages#home'
 
   devise_for :users
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+  resources :matches
+
+  namespace 'admin' do
+    resources :matches
+    resources :users, only: [:index, :update]
+  end
 end
