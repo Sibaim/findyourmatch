@@ -1,6 +1,4 @@
 class MatchesController < ApplicationController
-  def home
-  end
 
   def index
     matches_index = Match.all

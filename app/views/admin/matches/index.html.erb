@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="row">
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <h3>Couples</h3>
+      </div>
+      <div class="panel-body">
+        <div class="container">
+          <div class="row">
+            <% (Date.today.beginning_of_week .. (Date.today.end_of_week-2)).each do |day| %>
+              <div class="col-md-7">
+                <h4><%= day.strftime('%d/%m/%Y') %></h4>
+                <% @matches[day].to_a.each do |match| %>
+                <%= day %> | <%= match.first_student.name %> & <%= match.second_student.name %> <br>
+                <%end%>
+              </div>
+              <div class="col-md-3">
+                <%= link_to "Create matches", admin_matches_path(day: day), class: "btn btn-default", method: :create %>
+              </div>
+            <% end %>
+         </div>
+       </div>
+     </div>
+   </div>
+ </div>
+</div>

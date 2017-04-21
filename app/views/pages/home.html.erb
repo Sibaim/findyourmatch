@@ -1,6 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+    <title>Codaisseur</title>
+    <link href="../../assets/stylesheets/jumbotron.scss" rel="stylesheet">
+  </head>
+
+  <body>
+    <div class=" container col-md-6 col-md-offset-3 text-center">
+      <div class="jumbotron">
+        <% if !user_signed_in? %>
+        <h1>Codaisseur Project</h1>
+        <h3>Find your match daily</h3>
+        <p><%= link_to "Log In", new_user_session_path, class: "btn btn-primary btn-lg" %></p>
+        <% else %>
+        <h2>Welcome to Codaisseur Project</h2>
+          <% if current_user.is_admin? %>
+            <p>Welcome <%= current_user.name %>
+            <p><%= link_to "View and Create Matches", admin_matches_path, class: "btn btn-primary btn-lg" %></p>
+            <p><%= link_to "  View and Edit Users  ", admin_users_path, class: "btn btn-primary btn-lg" %></p>
+          <% else %>
+            <h2><%= current_user.name %> </h2>
+            <p><%= link_to "Find Your Matches", matches_path, class: "btn btn-primary btn-lg" %></p>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </body>
+</html>
+
 <div class="row">
   <div class="col-md-6 col-md-offset-3 text-center">
-    <h1>Codaisseur Project</h1>
-    <h3>Find your match daily</h3>
+
   </div>
 </div>

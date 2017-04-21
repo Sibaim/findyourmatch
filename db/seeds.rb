@@ -9,31 +9,38 @@ User.create!(
 )
 User.create!(
   name: 'Sera Am',
-  email: 'noemail@email.com',
+  email: 'sera@email.com',
   password: 'abc1234',
   is_admin: false,
 )
 User.create!(
   name: 'JT Breu',
-  email: 'noemail@email.com',
+  email: 'jt@email.com',
   password: 'abc1234',
   is_admin: false,
 )
 User.create!(
   name: 'Ces Uygun',
-  email: 'noemail@email.com',
+  email: 'ces@email.com',
   password: 'abc1234',
   is_admin: false,
 )
 User.create!(
   name: 'Jack Jonz',
-  email: 'noemail@email.com',
+  email: 'jack@email.com',
   password: 'abc1234',
   is_admin: false,
 )
 User.create!(
-  name: 'No Teammate',
+  name: 'Bambo Borillo',
+  email: 'bambo@email.com',
+  password: 'abc1234',
+  is_admin: false,
+)
+User.create!(
+  name: 'I Have No Teammate',
   email: 'noemail@email.com',
   password: 'abc1234',
-  no_teammate: false,
+  no_teammate: true,
+  is_admin: false,
 )
