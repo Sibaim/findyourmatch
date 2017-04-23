@@ -69,3 +69,7 @@ group :development, :test do
   gem 'factory_girl_rails', '4.7.0'
   gem 'faker', '1.6.6'
 end
+
+group :development, :test do
+  gem 'fuubar'
+end
